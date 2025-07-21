@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PMR SMKN 65</title>
-
-  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
   <style>
@@ -27,11 +26,25 @@
       height: 6px;
     }
 
-    .color-bar div { flex: 1; }
-    .color-1 { background-color: #d82027; }
-    .color-2 { background-color: #f25c46; }
-    .color-3 { background-color: #f7ac92; }
-    .color-4 { background-color: #fae3db; }
+    .color-bar div {
+      flex: 1;
+    }
+
+    .color-1 {
+      background-color: #d82027;
+    }
+
+    .color-2 {
+      background-color: #f25c46;
+    }
+
+    .color-3 {
+      background-color: #f7ac92;
+    }
+
+    .color-4 {
+      background-color: #fae3db;
+    }
 
     .content {
       display: flex;
@@ -45,7 +58,7 @@
       background-color: #ffffff;
       padding: 1rem 2rem;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
       display: flex;
       align-items: center;
       flex-wrap: wrap;
@@ -129,8 +142,13 @@
     }
 
     @keyframes scroll-left {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
+      0% {
+        transform: translateX(100%);
+      }
+
+      100% {
+        transform: translateX(-100%);
+      }
     }
 
     .slider-container {
@@ -140,7 +158,7 @@
       position: relative;
       overflow: hidden;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     .slides {
@@ -159,7 +177,7 @@
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      background: rgba(0,0,0,0.5);
+      background: rgba(0, 0, 0, 0.5);
       color: white;
       border: none;
       padding: 10px 15px;
@@ -169,8 +187,13 @@
       z-index: 2;
     }
 
-    .prev-btn { left: 15px; }
-    .next-btn { right: 15px; }
+    .prev-btn {
+      left: 15px;
+    }
+
+    .next-btn {
+      right: 15px;
+    }
 
     .tracker {
       position: absolute;
@@ -216,8 +239,15 @@
       margin-bottom: 15px;
     }
 
-    .card h3 { margin-bottom: 10px; }
-    .card p { font-size: 14px; margin-bottom: 15px; }
+    .card h3 {
+      margin-bottom: 10px;
+    }
+
+    .card p {
+      font-size: 14px;
+      margin-bottom: 15px;
+    }
+
     .card a {
       text-decoration: none;
       color: #e30613;
@@ -238,7 +268,8 @@
       justify-content: center;
     }
 
-    .divider::before, .divider::after {
+    .divider::before,
+    .divider::after {
       content: "";
       flex: 1;
       border-bottom: 1px solid #ccc;
@@ -258,7 +289,7 @@
       border: 4px solid #ffffff;
       border-radius: 12px;
       padding: 30px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     .judul-prinsip {
@@ -293,8 +324,15 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .fade-in {
@@ -303,21 +341,27 @@
     }
 
     @media (max-width: 600px) {
-      .slide { height: 200px; }
-      .services { flex-direction: column; align-items: center; }
+      .slide {
+        height: 200px;
+      }
+
+      .services {
+        flex-direction: column;
+        align-items: center;
+      }
     }
 
     .container {
       padding: 280px;
     }
 
-   .tips-container {
+    .tips-container {
       max-width: 1060px;
       margin: 0 auto 60px;
       padding: 30px;
       background-color: #fff;
       border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
     }
 
     .tips-container h2 {
@@ -328,7 +372,7 @@
     }
 
     .tip {
-      background-color: #eafaf1;
+      background-color: #fff0f0;
       margin-bottom: 20px;
       padding: 20px;
       border-left: 6px solid #ff0000;
@@ -348,8 +392,116 @@
       line-height: 1.6;
     }
 
+    .pengumuman-container {
+      max-width: 1050px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff0f0;
+      border-left: 6px solid #e60000;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .judul-pengumuman {
+      color: #b30000;
+      margin-bottom: 15px;
+      font-size: 22px;
+      font-weight: 1000;
+      text-align: center;
+    }
+
+    .pengumuman-ticker {
+      height: 40px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .pengumuman-ticker .item {
+      position: absolute;
+      width: 100%;
+      text-align: left;
+      padding-left: 15px;
+      opacity: 0;
+      animation: fadeInOut 12s linear infinite;
+    }
+
+    .pengumuman-ticker .item:nth-child(2) {
+      animation-delay: 4s;
+    }
+
+    .pengumuman-ticker .item:nth-child(3) {
+      animation-delay: 8s;
+    }
+
+    @keyframes fadeInOut {
+      0%   { opacity: 0; transform: translateY(20px); }
+      10%  { opacity: 1; transform: translateY(0); }
+      30%  { opacity: 1; }
+      40%  { opacity: 0; transform: translateY(-20px); }
+      100% { opacity: 0; }
+    }
+
+    footer {
+      background: #222;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-top: 60px;
+    }
+
+    
+    .countdown-container {
+    margin: 50px auto;
+    max-width: 1050px;
+    background: #fff0f0;
+    border-radius: 10px;
+    border-left: 8px solid #d60000;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 30px;
+  }
+
+  .judul {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #b30000;
+  }
+
+  .countdown {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Atur jarak antar elemen */
+    font-size: 24px;
+    font-weight: bold;
+    color: #d60000;
+    flex-wrap: wrap; /* Untuk HP */
+  }
+
+  .countdown div {
+    text-align: center;
+    min-width: 70px;
+  }
+
+  .label {
+    font-size: 14px;
+    font-weight: normal;
+    color: #555;
+  }
+
+  @media (max-width: 600px) {
+    .countdown {
+      gap: 15px;
+      font-size: 20px;
+    }
+
+    .countdown div {
+      min-width: 60px;
+    }
+  }
+
   </style>
 </head>
+
 <body>
 
   <div class="color-bar">
@@ -374,7 +526,7 @@
       </a>
     </div>
   </div>
-  
+
 
   <div class="marquee-box fade-in">
     <div class="marquee-text">Selamat Datang di PMR SMKN 65 JAKARTA</div>
@@ -392,6 +544,33 @@
       <span class="dot active"></span>
       <span class="dot"></span>
       <span class="dot"></span>
+    </div>
+  </div>
+
+  <div class="pengumuman-container">
+    <h2 class="judul-pengumuman">📢 Pengumuman</h2>
+    <div class="pengumuman-ticker">
+      <div class="item">📌 Latihan setiap hari selasa wajib membawa celana Training</div>
+      <div class="item">🧹 Jangan lupa untuk membersihkan UKS setelah di gunakan</div>
+      <div class="item">🔴 Persiapan Recruitment anggota baru</div>
+    </div>
+  </div>
+
+  <div class="countdown-container">
+    <center><div class="judul">📅 Hitung Mundur ke HUT PMI (17 September)</div></center>
+    <div class="countdown" id="countdown">
+      <div>
+        <span id="days">0</span><br><span class="label">Hari</span>
+      </div>
+      <div>
+        <span id="hours">0</span><br><span class="label">Jam</span>
+      </div>
+      <div>
+        <span id="minutes">0</span><br><span class="label">Menit</span>
+      </div>
+      <div>
+        <span id="seconds">0</span><br><span class="label">Detik</span>
+      </div>
     </div>
   </div>
 
@@ -424,52 +603,90 @@
 
   <div class="tips-container fade-in">
     <h2>Tips menjaga Kesehatan Sehari hari</h2>
-    <div class="tip"><h3>1. Minum Air Putih yang Cukup</h3><p>Pastikan tubuh terhidrasi dengan minum minimal 8 gelas air setiap hari.</p></div>
-    <div class="tip"><h3>2. Olahraga Rutin</h3><p>Lakukan aktivitas fisik minimal 30 menit sehari seperti jalan kaki, bersepeda, atau yoga.</p></div>
-    <div class="tip"><h3>3. Makan Buah dan Sayur</h3><p>Perbanyak konsumsi buah dan sayuran segar yang kaya vitamin dan mineral.</p></div>
-    <div class="tip"><h3>4. Tidur yang Cukup</h3><p>Usahakan tidur 7-9 jam setiap malam agar tubuh dan otak bisa beristirahat dengan optimal.</p></div>
-    <div class="tip"><h3>5. Kelola Stres</h3><p>Lakukan relaksasi, meditasi, atau kegiatan yang menyenangkan untuk menjaga kesehatan mental.</p></div>
+    <div class="tip">
+      <h3>1. Minum Air Putih yang Cukup</h3>
+      <p>Pastikan tubuh terhidrasi dengan minum minimal 8 gelas air setiap hari.</p>
+    </div>
+    <div class="tip">
+      <h3>2. Olahraga Rutin</h3>
+      <p>Lakukan aktivitas fisik minimal 30 menit sehari seperti jalan kaki, bersepeda, atau yoga.</p>
+    </div>
+    <div class="tip">
+      <h3>3. Makan Buah dan Sayur</h3>
+      <p>Perbanyak konsumsi buah dan sayuran segar yang kaya vitamin dan mineral.</p>
+    </div>
+    <div class="tip">
+      <h3>4. Tidur yang Cukup</h3>
+      <p>Usahakan tidur 7-9 jam setiap malam agar tubuh dan otak bisa beristirahat dengan optimal.</p>
+    </div>
+    <div class="tip">
+      <h3>5. Kelola Stres</h3>
+      <p>Lakukan relaksasi, meditasi, atau kegiatan yang menyenangkan untuk menjaga kesehatan mental.</p>
+    </div>
   </div>
 
   <div class="container-prinsip fade-in">
     <div class="judul-prinsip">7 Prinsip Dasar</div>
 
-    <div class="prinsip"><h3>1. KEMANUSIAAN</h3><p>Gerakan Palang Merah dan Bulan Sabit Merah Internasional didirikan berdasarkan keinginan memberikan pertolongan tanpa membedakan korban terluka di dalam pertempuran, berupaya dalam kemampuan bangsa dan antar bangsa, mencegah dan mengatasi penderitaan sesama manusia. Palang Merah menumbuhkan saling pengertian, kerjasama dan perdamaian abadi bagi sesama manusia.</p></div>
-    <div class="prinsip"><h3>2. KESAMAAN</h3><p>Gerakan ini tidak membuat perbedaan atas dasar kebangsaan, kesukuan, agama/kepercayaan tingkatan atau pandangan politik. Tujuannya semata – mata mengurangi penderitaan manusia sesuai dengan kebutuhannya dan mendahulukan keadaan yang paling parah.</p></div>
-    <div class="prinsip"><h3>3. KENETRALAN</h3><p>Agar senantiasa mendapat kepercayaan dari semua pihak, gerakan ini tidak boleh memihak atau melibatkan diri dalam pertentangan politik, kesukuan, agama atau idiologi.</p></div>
-    <div class="prinsip"><h3>4. KEMANDIRIAN</h3><p>Gerakan ini bersifat mandiri. Perhimpunan Nasional disamping membantu Pemerintahannya dalam bidang kemanusiaan, juga harus mentaati peraturan negaranya, harus selalu menjaga otonominya sehingga dapat bertindak sesuai dengan prinsip – prinsip gerakan ini.</p></div>
-    <div class="prinsip"><h3>5. KESUKARELAAN</h3><p>Gerakan ini adalah gerakan pemberi bantuan sukarela, yang tidak didasari oleh keinginan untuk mencari keuntungan apapun</p></div>
-    <div class="prinsip"><h3>6. KESATUAN</h3><p>Didalam suatu negara hanya ada satu Perhimpunan Palang Merah atau Bulan Sabit Merah yang terbuka untuk semua orang dan melaksanakan tugas kemanusiaan di seluruh wilayah.</p></div>
-    <div class="prinsip"><h3>7. KESEMESTAAN</h3><p>Gerakan Palang Merah dan Bulan Sabit Merah Internasional adalah bersifat semesta. Setiap perhimpunan mempunyai hak dan tanggung jawab yang sama dalam menolong sesama manusia.</p></div>
+    <div class="prinsip">
+      <h3>1. KEMANUSIAAN</h3>
+      <p>Gerakan Palang Merah dan Bulan Sabit Merah Internasional didirikan berdasarkan keinginan memberikan pertolongan
+        tanpa membedakan korban terluka di dalam pertempuran, berupaya dalam kemampuan bangsa dan antar bangsa, mencegah
+        dan mengatasi penderitaan sesama manusia. Palang Merah menumbuhkan saling pengertian, kerjasama dan perdamaian
+        abadi bagi sesama manusia.</p>
+    </div>
+    <div class="prinsip">
+      <h3>2. KESAMAAN</h3>
+      <p>Gerakan ini tidak membuat perbedaan atas dasar kebangsaan, kesukuan, agama/kepercayaan tingkatan atau pandangan
+        politik. Tujuannya semata – mata mengurangi penderitaan manusia sesuai dengan kebutuhannya dan mendahulukan
+        keadaan yang paling parah.</p>
+    </div>
+    <div class="prinsip">
+      <h3>3. KENETRALAN</h3>
+      <p>Agar senantiasa mendapat kepercayaan dari semua pihak, gerakan ini tidak boleh memihak atau melibatkan diri
+        dalam pertentangan politik, kesukuan, agama atau idiologi.</p>
+    </div>
+    <div class="prinsip">
+      <h3>4. KEMANDIRIAN</h3>
+      <p>Gerakan ini bersifat mandiri. Perhimpunan Nasional disamping membantu Pemerintahannya dalam bidang kemanusiaan,
+        juga harus mentaati peraturan negaranya, harus selalu menjaga otonominya sehingga dapat bertindak sesuai dengan
+        prinsip – prinsip gerakan ini.</p>
+    </div>
+    <div class="prinsip">
+      <h3>5. KESUKARELAAN</h3>
+      <p>Gerakan ini adalah gerakan pemberi bantuan sukarela, yang tidak didasari oleh keinginan untuk mencari
+        keuntungan apapun</p>
+    </div>
+    <div class="prinsip">
+      <h3>6. KESATUAN</h3>
+      <p>Didalam suatu negara hanya ada satu Perhimpunan Palang Merah atau Bulan Sabit Merah yang terbuka untuk semua
+        orang dan melaksanakan tugas kemanusiaan di seluruh wilayah.</p>
+    </div>
+    <div class="prinsip">
+      <h3>7. KESEMESTAAN</h3>
+      <p>Gerakan Palang Merah dan Bulan Sabit Merah Internasional adalah bersifat semesta. Setiap perhimpunan mempunyai
+        hak dan tanggung jawab yang sama dalam menolong sesama manusia.</p>
+    </div>
   </div>
 
-    <!-- Bagian Video -->
+  <!-- Bagian Video -->
   <div class="tips-container fade-in">
     <h2>Vidio Edukasi</h2>
     <div class="video-embed fade-in" style="display: flex; justify-content: center; margin-bottom: 60px;">
-    <iframe 
-      width="500" 
-      height="250"
-      src="https://www.youtube.com/embed/i4qnLhVC444" 
-      title="Video Sejarah PMI"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen>
-    </iframe>
+      <iframe width="500" height="250" src="https://www.youtube.com/embed/i4qnLhVC444" title="Video Sejarah PMI"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <div class="video-embed fade-in" style="display: flex; justify-content: center; margin-bottom: 60px;">
+      <iframe width="500" height="250" src="https://www.youtube.com/embed/NPdl5gDOLmI" title="Video Sejarah PMI"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen>
+      </iframe>
+    </div>
   </div>
-  <div class="video-embed fade-in" style="display: flex; justify-content: center; margin-bottom: 60px;">
-    <iframe 
-      width="500" 
-      height="250"
-      src="https://www.youtube.com/embed/NPdl5gDOLmI" 
-      title="Video Sejarah PMI"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-      allowfullscreen>
-    </iframe>
-  </div>
-  </div>
-
 
   <div class="divider-container fade-in">
     <div class="divider">
@@ -533,6 +750,33 @@
       clearInterval(slideInterval);
       slideInterval = setInterval(autoSlide, 3000);
     }
+
+
+    function updateCountdown() {
+      const now = new Date();
+      let year = now.getFullYear();
+      const targetDate = new Date(`${year}-09-17T00:00:00`);
+
+      // Jika tanggal sudah lewat, target ke tahun depan
+      if (now > targetDate) {
+        targetDate.setFullYear(year + 1);
+      }
+
+      const diff = targetDate - now;
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+      const minutes = Math.floor((diff / (1000 * 60)) % 60);
+      const seconds = Math.floor((diff / 1000) % 60);
+
+      document.getElementById("days").textContent = days;
+      document.getElementById("hours").textContent = hours;
+      document.getElementById("minutes").textContent = minutes;
+      document.getElementById("seconds").textContent = seconds;
+    }
+
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
   </script>
 </body>
+
 </html>
