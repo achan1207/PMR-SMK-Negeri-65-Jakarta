@@ -307,6 +307,47 @@
       .services { flex-direction: column; align-items: center; }
     }
 
+    .container {
+      padding: 280px;
+    }
+
+   .tips-container {
+      max-width: 1060px;
+      margin: 0 auto 60px;
+      padding: 30px;
+      background-color: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    .tips-container h2 {
+      text-align: center;
+      font-size: 28px;
+      color: #e60000;
+      margin-bottom: 30px;
+    }
+
+    .tip {
+      background-color: #eafaf1;
+      margin-bottom: 20px;
+      padding: 20px;
+      border-left: 6px solid #ff0000;
+      border-radius: 8px;
+      animation: fadeIn 0.8s ease-in-out;
+    }
+
+    .tip h3 {
+      font-size: 18px;
+      margin-bottom: 8px;
+      color: #333;
+    }
+
+    .tip p {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.6;
+    }
+
   </style>
 </head>
 <body>
@@ -332,6 +373,7 @@
       </a>
     </div>
   </div>
+  
 
   <div class="marquee-box fade-in">
     <div class="marquee-text">Selamat Datang di PMR SMKN 65 JAKARTA</div>
@@ -379,8 +421,17 @@
     </div>
   </div>
 
+  <div class="tips-container fade-in">
+    <h2>Tips menjaga Kesehatan Sehari hari</h2>
+    <div class="tip"><h3>1. Minum Air Putih yang Cukup</h3><p>Pastikan tubuh terhidrasi dengan minum minimal 8 gelas air setiap hari.</p></div>
+    <div class="tip"><h3>2. Olahraga Rutin</h3><p>Lakukan aktivitas fisik minimal 30 menit sehari seperti jalan kaki, bersepeda, atau yoga.</p></div>
+    <div class="tip"><h3>3. Makan Buah dan Sayur</h3><p>Perbanyak konsumsi buah dan sayuran segar yang kaya vitamin dan mineral.</p></div>
+    <div class="tip"><h3>4. Tidur yang Cukup</h3><p>Usahakan tidur 7-9 jam setiap malam agar tubuh dan otak bisa beristirahat dengan optimal.</p></div>
+    <div class="tip"><h3>5. Kelola Stres</h3><p>Lakukan relaksasi, meditasi, atau kegiatan yang menyenangkan untuk menjaga kesehatan mental.</p></div>
+  </div>
+
   <div class="container-prinsip fade-in">
-    <div class="judul-prinsip">7 Prinsip Dasar Gerakan Internasional Palang Merah dan Bulan Sabit Merah</div>
+    <div class="judul-prinsip">7 Prinsip Dasar</div>
 
     <div class="prinsip"><h3>1. KEMANUSIAAN</h3><p>Gerakan Palang Merah dan Bulan Sabit Merah Internasional didirikan berdasarkan keinginan memberikan pertolongan tanpa membedakan korban terluka di dalam pertempuran, berupaya dalam kemampuan bangsa dan antar bangsa, mencegah dan mengatasi penderitaan sesama manusia. Palang Merah menumbuhkan saling pengertian, kerjasama dan perdamaian abadi bagi sesama manusia.</p></div>
     <div class="prinsip"><h3>2. KESAMAAN</h3><p>Gerakan ini tidak membuat perbedaan atas dasar kebangsaan, kesukuan, agama/kepercayaan tingkatan atau pandangan politik. Tujuannya semata – mata mengurangi penderitaan manusia sesuai dengan kebutuhannya dan mendahulukan keadaan yang paling parah.</p></div>
@@ -392,10 +443,12 @@
   </div>
 
     <!-- Bagian Video -->
-  <div class="video-embed fade-in" style="display: flex; justify-content: center; margin-bottom: 60px;">
+  <div class="tips-container fade-in">
+    <h2>Vidio Edukasi</h2>
+    <div class="video-embed fade-in" style="display: flex; justify-content: center; margin-bottom: 60px;">
     <iframe 
       width="500" 
-      height="250"
+      height="300"
       src="https://www.youtube.com/embed/i4qnLhVC444" 
       title="Video Sejarah PMI"
       frameborder="0"
@@ -406,7 +459,7 @@
   <div class="video-embed fade-in" style="display: flex; justify-content: center; margin-bottom: 60px;">
     <iframe 
       width="500" 
-      height="250"
+      height="300"
       src="https://www.youtube.com/embed/NPdl5gDOLmI" 
       title="Video Sejarah PMI"
       frameborder="0"
@@ -414,6 +467,8 @@
       allowfullscreen>
     </iframe>
   </div>
+  </div>
+
 
 
   <div class="divider-container fade-in">
