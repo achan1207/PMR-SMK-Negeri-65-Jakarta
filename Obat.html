@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PMR SMKN 65</title>
+
+  <!-- Font Awesome untuk ikon hamburger -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .color-bar {
+      display: flex;
+      width: 100%;
+      height: 6px;
+    }
+
+    .color-bar div { flex: 1; }
+    .color-1 { background-color: #d82027; }
+    .color-2 { background-color: #f25c46; }
+    .color-3 { background-color: #f7ac92; }
+    .color-4 { background-color: #fae3db; }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 0 10px;
+    }
+
+    /* Navbar Gabungan */
+    .navbar {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1050px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .navbar img {
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .menu-links a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: color 0.3s;
+      display: inline-block;
+    }
+
+    .menu-links a:hover {
+      color: #d20c0c;
+    }
+
+    .navbar .icon {
+      display: none;
+      font-size: 26px;
+      color: black;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu-links {
+        display: none;
+        width: 100%;
+        text-align: left;
+      }
+
+      .menu-links a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar .icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    }
+
+    .marquee-box {
+      margin: 10px auto 30px;
+      max-width: 1050px;
+      padding: 15px;
+      border: 3px solid crimson;
+      border-radius: 10px;
+      background-color: #ffecec;
+      text-align: center;
+      overflow: hidden;
+    }
+
+    .marquee-text {
+      white-space: nowrap;
+      display: inline-block;
+      animation: scroll-left 10s linear infinite;
+      font-size: 20px;
+      color: crimson;
+      font-weight: bold;
+    }
+
+    @keyframes scroll-left {
+      0% { transform: translateX(100%); }
+      100% { transform: translateX(-100%); }
+    }
+
+    
+    .divider-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+      margin: 0 20px;
+    }
+
+    .divider span {
+      font-size: 20px;
+      color: #aaa;
+      font-weight: 500;
+    }
+
+
+
+
+    header {
+      background-color: #c62828;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #c62828;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .card-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #c62828;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .card-btn:hover {
+      background-color: #a91f1f;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      padding: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="color-bar">
+    <div class="color-1"></div>
+    <div class="color-2"></div>
+    <div class="color-3"></div>
+    <div class="color-4"></div>
+  </div>
+
+  <div class="content fade-in">
+    <div class="navbar topnav">
+      <img src="image copy.png" alt="Logo Organisasi">
+      <div id="myLinks" class="menu-links">
+        <a href="index.html">Beranda</a>
+        <a href="anggota.html">Anggota</a>
+        <a href="kontak.html">Instagram</a>
+        <a href="struktur.html">Jabatan</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+
+  
+   <div class="container">
+    <div class="card">
+      <img src="image copy 5.png" >
+      <div class="card-body">
+        <div class="card-title">Paracetamol</div>
+        <div class="card-desc">Paracetamol adalah obat untuk meredakan demam dan nyeri. Keluhan nyeri yang bisa diobati dengan paracetamol antara lain sakit kepala, nyeri haid, sakit gigi, atau pegal-pegal. </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 6.png" >
+      <div class="card-body">
+        <div class="card-title">Cetirizine</div>
+        <div class="card-desc">Cetirizine adalah obat untuk meredakan gejala akibat reaksi alergi, seperti mata berair, bersin-bersin, hidung meler, atau gatal di kulit, tenggorokan, maupun hidung. </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 7.png">
+      <div class="card-body">
+        <div class="card-title">Polysilane</div>
+        <div class="card-desc">Polysilane bermanfaat untuk mengurangi mual, sakit perut, atau kembung, akibat sakit maag, tukak lambung, atau radang lambung.</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 8.png" >
+      <div class="card-body">
+        <div class="card-title">Antasida Doen</div>
+        <div class="card-desc">obat yang bermanfaat untuk meredakan gejala asam lambung berlebih, seperti nyeri ulu hati, mual, atau rasa panas di dada (heartburn).</div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 9.png" >
+      <div class="card-body">
+        <div class="card-title">Degirol</div>
+        <div class="card-desc">Degirol adalah obat antiseptik yang bermanfaat untuk mengatasi sakit tenggorokan dan radang di rongga mulut, seperti radang gusi, radang amandel, dan sariawan. </div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="image copy 10.png" >
+      <div class="card-body">
+        <div class="card-title">Fasidol</div>
+        <div class="card-desc">Fasidol bermanfaat untuk meredakan nyeri, seperti nyeri kepala atau sakit gigi, serta menurunkan demam.  </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 11.png" >
+      <div class="card-body">
+        <div class="card-title">Sanmol</div>
+        <div class="card-desc">Sanmol adalah obat yang digunakan untuk meredakan demam serta nyeri. Rasa sakit yang bisa diatasi dengan obat ini meliputi sakit kepala, sakit gigi, atau nyeri sesudah operasi. </div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="image copy 12.png" >
+      <div class="card-body">
+        <div class="card-title">Panadol</div>
+        <div class="card-desc">Panadol adalah obat yang bermanfaat untuk menurunkan demam serta meredakan nyeri, seperti sakit kepala, sakit gigi, atau sakit pada otot. </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <div class="divider-container fade-in">
+    <div class="divider">
+      <span>Salam Kemanusiaan</span>
+    </div>
+  </div>
+
+  <script>
+    // Toggle Menu (Hamburger)
+    function toggleMenu() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>

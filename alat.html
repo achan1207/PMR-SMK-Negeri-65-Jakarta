@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PMR SMKN 65</title>
+
+  <!-- Font Awesome untuk ikon hamburger -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .color-bar {
+      display: flex;
+      width: 100%;
+      height: 6px;
+    }
+
+    .color-bar div { flex: 1; }
+    .color-1 { background-color: #d82027; }
+    .color-2 { background-color: #f25c46; }
+    .color-3 { background-color: #f7ac92; }
+    .color-4 { background-color: #fae3db; }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 0 10px;
+    }
+
+    /* Navbar Gabungan */
+    .navbar {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1050px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .navbar img {
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .menu-links a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: color 0.3s;
+      display: inline-block;
+    }
+
+    .menu-links a:hover {
+      color: #d20c0c;
+    }
+
+    .navbar .icon {
+      display: none;
+      font-size: 26px;
+      color: black;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu-links {
+        display: none;
+        width: 100%;
+        text-align: left;
+      }
+
+      .menu-links a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar .icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    }
+
+   
+
+    .divider-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+      margin: 0 20px;
+    }
+
+    .divider span {
+      font-size: 20px;
+      color: #aaa;
+      font-weight: 500;
+    }
+
+
+
+    
+    header {
+      background-color: #c62828;
+      padding: 20px;
+      text-align: center;
+      color: white;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 28px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+      flex-grow: 1;
+    }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: bold;
+      color: #c62828;
+      margin-bottom: 8px;
+    }
+
+    .card-desc {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 15px;
+    }
+
+    .card-btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #c62828;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+
+    .card-btn:hover {
+      background-color: #a91f1f;
+    }
+
+    footer {
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+      color: #888;
+      padding: 20px;
+    }
+
+  </style>
+</head>
+<body>
+
+  <div class="color-bar">
+    <div class="color-1"></div>
+    <div class="color-2"></div>
+    <div class="color-3"></div>
+    <div class="color-4"></div>
+  </div>
+
+  <div class="content fade-in">
+    <div class="navbar topnav">
+      <img src="image copy.png" alt="Logo Organisasi">
+      <div id="myLinks" class="menu-links">
+        <a href="index.html">Beranda</a>
+        <a href="anggota.html">Anggota</a>
+        <a href="kontak.html">Instagram</a>
+        <a href="struktur.html">Jabatan</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+
+  
+   <div class="container">
+    <div class="card">
+      <img src="image copy 13.png" >
+      <div class="card-body">
+        <div class="card-title">Tas Pertolongan Pertama kecil</div>
+        <div class="card-desc"> </div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 38.png" >
+      <div class="card-body">
+        <div class="card-title">Tas Pertolongan Pertama besar</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 15.png">
+      <div class="card-body">
+        <div class="card-title">Tabung Oksigen</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 16.png" >
+      <div class="card-body">
+        <div class="card-title">Berankar</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="image copy 35.png" >
+      <div class="card-body">
+        <div class="card-title">Bidai</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 36.png" >
+      <div class="card-body">
+        <div class="card-title">Oximeter</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 37.png" >
+      <div class="card-body">
+        <div class="card-title">Tabung Regulator Oksigen</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="image copy 14.png" >
+      <div class="card-body">
+        <div class="card-title">Tandu Portebel</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 39.png" >
+      <div class="card-body">
+        <div class="card-title">Tali</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image copy 40.png" >
+      <div class="card-body">
+        <div class="card-title">Bambu</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="image copy 41.png" >
+      <div class="card-body">
+        <div class="card-title">Selang Oksigen</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+
+     <div class="card">
+      <img src="image copy 42.png" >
+      <div class="card-body">
+        <div class="card-title">Masker Oksigen</div>
+        <div class="card-desc"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="divider-container fade-in">
+    <div class="divider">
+      <span>Salam Kemanusiaan</span>
+    </div>
+  </div>
+
+  <script>
+    // Toggle Menu (Hamburger)
+    function toggleMenu() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+  </script>
+</body>
+</html>
