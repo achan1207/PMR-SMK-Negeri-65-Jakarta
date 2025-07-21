@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PMR SMKN 65</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels"></script>
 
   <!-- Font Awesome untuk ikon hamburger -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -237,6 +239,42 @@
       .anggota-table td {
         font-size: 13px;
         padding: 10px;
+      }
+    }
+
+     .Statik {
+      max-width: 450px;
+      margin: auto;
+      background: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 20px;
+      color: #c2185b;
+      margin-bottom: 15px;
+    }
+
+    canvas {
+      max-width: 100%;
+      margin: auto;
+    }
+
+    .info {
+      margin-top: 15px;
+      font-size: 15px;
+    }
+
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 18px;
+      }
+
+      .info {
+        font-size: 14px;
       }
     }
 
@@ -558,6 +596,18 @@
   </div>
 
 
+   <div class="Statik">
+    <h1>Statistik Anggota PMR Yang Aktif</h1>
+    <canvas id="donutChart" width="250" height="250"></canvas>
+
+    <div class="info">
+      <p>Total Anggota: <strong id="total">0</strong></p>
+      <p>Aktif: <strong id="aktif">0</strong> anggota</p>
+      <p>Tidak Aktif: <strong id="nonaktif">0</strong> anggota</p>
+    </div>
+  </div>
+
+
   <div class="divider-container fade-in">
     <div class="divider">
       <span>Salam Kemanusiaan</span>
@@ -574,6 +624,53 @@
         x.style.display = "block";
       }
     }
+
+     // Data jumlah anggota
+    const jumlahAktif = 12;
+    const jumlahTidakAktif = 26;
+    const total = jumlahAktif + jumlahTidakAktif;
+
+    // Update info teks
+    document.getElementById("total").innerText = total;
+    document.getElementById("aktif").innerText = jumlahAktif;
+    document.getElementById("nonaktif").innerText = jumlahTidakAktif;
+
+    // Buat diagram donat dengan persen
+    const ctx = document.getElementById('donutChart').getContext('2d');
+    new Chart(ctx, {
+      type: 'doughnut',
+      data: {
+        labels: ['Aktif', 'Tidak Aktif'],
+        datasets: [{
+          data: [jumlahAktif, jumlahTidakAktif],
+          backgroundColor: ['#4caf50', '#f44336'],
+          borderColor: '#ffffff',
+          borderWidth: 2
+        }]
+      },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: {
+            position: 'bottom'
+          },
+          datalabels: {
+            formatter: (value, context) => {
+              const total = context.chart.data.datasets[0].data.reduce((a, b) => a + b, 0);
+              const persen = (value / total * 100).toFixed(1) + '%';
+              return persen;
+            },
+            color: '#fff',
+            font: {
+              weight: 'bold',
+              size: 16
+            }
+          }
+        }
+      },
+      plugins: [ChartDataLabels]
+    });
   </script>
+  
 </body>
 </html>
