@@ -499,6 +499,30 @@
     }
   }
 
+  .quote-box {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  max-width: 1050px;
+  margin: 30px auto; /* Pusatkan */
+  text-align: center; /* Tengah isi teks */
+}
+
+
+    .quote {
+      font-size: 1.5rem;
+      color: #333;
+      margin-bottom: 15px;
+      min-height: 80px;
+      transition: opacity 0.5s;
+    }
+
+    .author {
+      font-style: italic;
+      color: #555;
+    }
+
   </style>
 </head>
 
@@ -556,23 +580,7 @@
     </div>
   </div>
 
-  <div class="countdown-container">
-    <center><div class="judul">📅 Hitung Mundur ke HUT PMI (17 September)</div></center>
-    <div class="countdown" id="countdown">
-      <div>
-        <span id="days">0</span><br><span class="label">Hari</span>
-      </div>
-      <div>
-        <span id="hours">0</span><br><span class="label">Jam</span>
-      </div>
-      <div>
-        <span id="minutes">0</span><br><span class="label">Menit</span>
-      </div>
-      <div>
-        <span id="seconds">0</span><br><span class="label">Detik</span>
-      </div>
-    </div>
-  </div>
+  
 
   <div class="services fade-in">
     <div class="card">
@@ -599,6 +607,11 @@
       <p>Obat-obatan dan Manfaat</p>
       <a href="Obat.html">lihat</a>
     </div>
+  </div>
+
+  <div class="quote-box">
+    <div class="quote" id="quote">Loading quote...</div>
+    <div class="author" id="author"></div>
   </div>
 
   <div class="tips-container fade-in">
@@ -685,6 +698,24 @@
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
         allowfullscreen>
       </iframe>
+    </div>
+  </div>
+
+  <div class="countdown-container">
+    <center><div class="judul">📅 Hitung Mundur ke HUT PMI (17 September)</div></center>
+    <div class="countdown" id="countdown">
+      <div>
+        <span id="days">0</span><br><span class="label">Hari</span>
+      </div>
+      <div>
+        <span id="hours">0</span><br><span class="label">Jam</span>
+      </div>
+      <div>
+        <span id="minutes">0</span><br><span class="label">Menit</span>
+      </div>
+      <div>
+        <span id="seconds">0</span><br><span class="label">Detik</span>
+      </div>
     </div>
   </div>
 
@@ -776,6 +807,47 @@
 
     updateCountdown();
     setInterval(updateCountdown, 1000);
+
+     const quotes = [
+      { text: "Jadilah bagian dari solusi, bukan bagian dari masalah.", author: "Anonim" },
+      { text: "Setiap tetes darah yang kamu donorkan bisa menyelamatkan nyawa.", author: "PMI" },
+      { text: "Kesuksesan bukan milik orang pintar, tapi milik mereka yang mau berusaha.", author: "BJ Habibie" },
+      { text: "Kebaikan sekecil apa pun tak akan pernah sia-sia.", author: "Mahatma Gandhi" },
+      { text: "Kedisiplinan adalah jembatan menuju prestasi.", author: "Mario Teguh" },
+      { text: "Bersama kita kuat, bersama kita sehat.", author: "PMR SMKN 65" },
+      { text: "Kesehatan bukan segalanya, tapi tanpa kesehatan segalanya bukan apa-apa.", author: "Arthur Schopenhauer" },
+      { text: "Menjadi relawan bukan karena kita punya banyak waktu, tapi karena kita punya hati.", author: "Volunteer Indonesia" },
+      { text: "Berani bertindak, berarti berani bertanggung jawab.", author: "Anonim" },
+      { text: "Jangan menunda kebaikan, karena waktu terus berjalan.", author: "Anonim" },
+    ];
+
+    let current = 0;
+
+    function showQuote(index) {
+      const quoteElement = document.getElementById('quote');
+      const authorElement = document.getElementById('author');
+
+      quoteElement.style.opacity = 0;
+      authorElement.style.opacity = 0;
+
+      setTimeout(() => {
+        quoteElement.textContent = quotes[index].text;
+        authorElement.textContent = "- " + quotes[index].author;
+        quoteElement.style.opacity = 1;
+        authorElement.style.opacity = 1;
+      }, 500);
+    }
+
+    function nextQuote() {
+      current = (current + 1) % quotes.length;
+      showQuote(current);
+    }
+
+    // tampilkan pertama kali
+    showQuote(current);
+
+    // ubah quote setiap 5 detik
+    setInterval(nextQuote, 5000);
   </script>
 </body>
 
