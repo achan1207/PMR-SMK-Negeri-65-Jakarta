@@ -526,24 +526,113 @@
     }
 
     .popup {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #ffefc2;
-      color: #333;
-      padding: 10px;
-      border-left: 5px solid #ff0000;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
       display: none;
-      animation: slideUp 0.5s ease;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #fff8dc;
+      border: 2px solid #f03b3b;
+      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      z-index: 9999;
+      border-radius: 10px;
+      max-width: 300px;
+      font-size: 14px;
+    }
+
+    .popup.show {
+      animation: slideUp 0.5s ease forwards;
+    }
+
+    .popup.hide {
+      animation: slideDown 0.5s ease forwards;
     }
 
     @keyframes slideUp {
       from { transform: translateY(30px); opacity: 0; }
       to { transform: translateY(0); opacity: 1; }
     }
- 
+
+    @keyframes slideDown {
+      from { transform: translateY(0); opacity: 1; }
+      to { transform: translateY(30px); opacity: 0; }
+    }
+
+     .forum-container {
+      max-width: 1050px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .forum-container h2 {
+      margin-top: 0;
+      color: #d32f2f;
+      font-size: 1.5em;
+    }
+
+    .comment-box {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 20px;
+    }
+
+    .comment-box input,
+    .comment-box textarea {
+      margin-bottom: 10px;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      width: 100%;
+      box-sizing: border-box;
+    }
+
+    .comment-box button {
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    .comment-list {
+      margin-top: 20px;
+    }
+
+    .comment-item {
+      border-bottom: 1px solid #eee;
+      padding: 10px 0;
+      word-wrap: break-word;
+    }
+
+    .comment-item strong {
+      color: #d32f2f;
+    }
+
+    /* Responsif untuk layar kecil */
+    @media (max-width: 480px) {
+      body {
+        padding: 10px;
+      }
+
+      .forum-container {
+        padding: 15px;
+      }
+
+      .forum-container h2 {
+        font-size: 1.2em;
+      }
+
+      .comment-box button {
+        padding: 8px;
+        font-size: 13px;
+      }
+    }
   </style>
 </head>
 
@@ -597,9 +686,9 @@
   <div class="pengumuman-container">
     <h2 class="judul-pengumuman">📢 Pengumuman</h2>
     <div class="pengumuman-ticker">
-      <div class="item">📌 admin @acan_priadi</div>
+      <div class="item">📌 hallo</div>
       <div class="item">🧹 Jangan lupa untuk membersihkan UKS setelah di gunakan</div>
-      <div class="item">🔴 Persiapan Recruitment anggota baru</div>
+      <div class="item">🔴 Ayo daftar sekarang sebelum terlambat</div>
     </div>
   </div>
 
@@ -661,50 +750,6 @@
     </div>
   </div>
 
-  <div class="container-prinsip fade-in">
-    <div class="judul-prinsip">7 Prinsip Dasar</div>
-
-    <div class="prinsip">
-      <h3>1. KEMANUSIAAN</h3>
-      <p>Gerakan Palang Merah dan Bulan Sabit Merah Internasional didirikan berdasarkan keinginan memberikan pertolongan
-        tanpa membedakan korban terluka di dalam pertempuran, berupaya dalam kemampuan bangsa dan antar bangsa, mencegah
-        dan mengatasi penderitaan sesama manusia. Palang Merah menumbuhkan saling pengertian, kerjasama dan perdamaian
-        abadi bagi sesama manusia.</p>
-    </div>
-    <div class="prinsip">
-      <h3>2. KESAMAAN</h3>
-      <p>Gerakan ini tidak membuat perbedaan atas dasar kebangsaan, kesukuan, agama/kepercayaan tingkatan atau pandangan
-        politik. Tujuannya semata – mata mengurangi penderitaan manusia sesuai dengan kebutuhannya dan mendahulukan
-        keadaan yang paling parah.</p>
-    </div>
-    <div class="prinsip">
-      <h3>3. KENETRALAN</h3>
-      <p>Agar senantiasa mendapat kepercayaan dari semua pihak, gerakan ini tidak boleh memihak atau melibatkan diri
-        dalam pertentangan politik, kesukuan, agama atau idiologi.</p>
-    </div>
-    <div class="prinsip">
-      <h3>4. KEMANDIRIAN</h3>
-      <p>Gerakan ini bersifat mandiri. Perhimpunan Nasional disamping membantu Pemerintahannya dalam bidang kemanusiaan,
-        juga harus mentaati peraturan negaranya, harus selalu menjaga otonominya sehingga dapat bertindak sesuai dengan
-        prinsip – prinsip gerakan ini.</p>
-    </div>
-    <div class="prinsip">
-      <h3>5. KESUKARELAAN</h3>
-      <p>Gerakan ini adalah gerakan pemberi bantuan sukarela, yang tidak didasari oleh keinginan untuk mencari
-        keuntungan apapun</p>
-    </div>
-    <div class="prinsip">
-      <h3>6. KESATUAN</h3>
-      <p>Didalam suatu negara hanya ada satu Perhimpunan Palang Merah atau Bulan Sabit Merah yang terbuka untuk semua
-        orang dan melaksanakan tugas kemanusiaan di seluruh wilayah.</p>
-    </div>
-    <div class="prinsip">
-      <h3>7. KESEMESTAAN</h3>
-      <p>Gerakan Palang Merah dan Bulan Sabit Merah Internasional adalah bersifat semesta. Setiap perhimpunan mempunyai
-        hak dan tanggung jawab yang sama dalam menolong sesama manusia.</p>
-    </div>
-  </div>
-
   <!-- Bagian Video -->
   <div class="tips-container fade-in">
     <h2>Vidio Edukasi</h2>
@@ -723,6 +768,16 @@
       </iframe>
     </div>
   </div>
+
+  <div class="forum-container">
+  <h2>Forum Diskusi</h2>
+  <div class="comment-box">
+    <input type="text" id="nama" placeholder="Nama Anda">
+    <textarea id="komentar" rows="3" placeholder="Tulis komentar Anda..."></textarea>
+    <button onclick="tambahKomentar()">Kirim Komentar</button>
+  </div>
+  <div class="comment-list" id="daftar-komentar"></div>
+</div>
 
   <div class="countdown-container">
     <center><div class="judul">📅 Hitung Mundur ke HUT PMI (17 September)</div></center>
@@ -874,32 +929,68 @@
     // ubah quote setiap 5 detik
     setInterval(nextQuote, 5000);
 
-    const events = [
-      { date: '2025-07-22', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-07-29', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-08-05', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-08-12', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-08-19', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-08-26', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-09-02', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-09-09', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-09-16', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-09-23', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-09-30', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-09-07', title: 'Latihan jangan lupa untuk membawa celana Training' },
-      { date: '2025-10-17', title: 'HUT PMI Nasional' }
-    ];
+     // ... kode slider, quote, countdown tetap ...
 
-    const today = new Date();
-    const todayStr = today.toISOString().split('T')[0];
+  const events = [
+    { date: '2025-07-22', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-07-29', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-08-05', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-08-12', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-08-19', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-08-26', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-09-02', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-09-09', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-09-16', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-09-23', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-09-30', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-09-07', title: 'Latihan jangan lupa untuk membawa celana Training' },
+    { date: '2025-10-17', title: 'HUT PMI Nasional' }
+  ];
 
-    const todayEvent = events.find(event => event.date === todayStr);
+  const today = new Date();
+  const todayStr = today.toISOString().split('T')[0];
 
-    if (todayEvent) {
-      const reminderBox = document.getElementById('reminderBox');
+  const todayEvent = events.find(event => event.date === todayStr);
+
+  if (todayEvent) {
+    const reminderBox = document.getElementById('reminderBox');
+
+    function showPopup() {
       reminderBox.innerHTML = `<strong>📌 Reminder Hari Ini:</strong><br>${todayEvent.title}`;
       reminderBox.style.display = 'block';
+
+      // Sembunyikan setelah 10 detik
+      setTimeout(() => {
+        reminderBox.style.display = 'none';
+      }, 10000);
     }
+
+    // Tampilkan pertama kali
+    showPopup();
+
+    // Ulangi setiap 60 detik
+    setInterval(showPopup, 60000);
+  }
+
+   function tambahKomentar() {
+    const nama = document.getElementById("nama").value.trim();
+    const komentar = document.getElementById("komentar").value.trim();
+
+    if (nama === '' || komentar === '') {
+      alert("Mohon isi nama dan komentar.");
+      return;
+    }
+
+    const div = document.createElement("div");
+    div.className = "comment-item";
+    div.innerHTML = `<strong>${nama}</strong><br>${komentar}`;
+
+    const daftar = document.getElementById("daftar-komentar");
+    daftar.prepend(div);
+
+    document.getElementById("nama").value = "";
+    document.getElementById("komentar").value = "";
+  }
   </script>
 </body>
 
