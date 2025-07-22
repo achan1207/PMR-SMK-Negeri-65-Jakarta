@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PMR SMKN 65</title>
+
+  <!-- Font Awesome untuk ikon hamburger -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f0f0;
+      color: #333;
+    }
+
+    .color-bar {
+      display: flex;
+      width: 100%;
+      height: 6px;
+    }
+
+    .color-bar div { flex: 1; }
+    .color-1 { background-color: #d82027; }
+    .color-2 { background-color: #f25c46; }
+    .color-3 { background-color: #f7ac92; }
+    .color-4 { background-color: #fae3db; }
+
+    .content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 30px 0 10px;
+    }
+
+    /* Navbar Gabungan */
+    .navbar {
+      background-color: #ffffff;
+      padding: 1rem 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-width: 1050px;
+      width: 100%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    .navbar img {
+      height: 60px;
+      margin-right: 20px;
+    }
+
+    .menu-links a {
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      margin: 0 15px;
+      font-size: 16px;
+      font-weight: 700;
+      transition: color 0.3s;
+      display: inline-block;
+    }
+
+    .menu-links a:hover {
+      color: #d20c0c;
+    }
+
+    .navbar .icon {
+      display: none;
+      font-size: 26px;
+      color: black;
+      padding: 8px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .menu-links {
+        display: none;
+        width: 100%;
+        text-align: left;
+      }
+
+      .menu-links a {
+        display: block;
+        margin: 10px 0;
+      }
+
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .navbar .icon {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+      }
+    }
+
+    
+    
+    .divider-container {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .divider::before, .divider::after {
+      content: "";
+      flex: 1;
+      border-bottom: 1px solid #ccc;
+      margin: 0 20px;
+    }
+
+    .divider span {
+      font-size: 20px;
+      color: #aaa;
+      font-weight: 500;
+    }
+    
+    h1, h2 {
+      color: hsl(0, 100%, 50%);
+      margin-bottom: 20px;
+      text-align: center;
+      
+    }
+
+    .container,
+    .calculator {
+      background: #ffffff;
+      padding: 25px;
+      border-radius: 15px;
+      max-width: 1050px;
+      margin: 20px auto;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      margin: 5px 0;
+      text-align: left;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: hsl(0, 100%, 49%);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: hsl(0, 100%, 49%);
+    }
+
+    .result {
+      margin-top: 20px;
+      font-size: 16px;
+      color: #333;
+      text-align: left;
+    }
+
+    .result ul {
+      margin-top: 10px;
+      padding-left: 20px;
+    }
+
+    .result strong {
+      color: hsl(0, 100%, 49%);
+    }
+
+    .checkbox-wrapper {
+      height: 250px;
+      overflow-y: auto;
+      padding-right: 10px;
+      border: 1px solid #ccc;
+      margin-top: 15px;
+      text-align: left;
+    }
+
+    input[type="number"], select {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      margin-bottom: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+    }
+
+    #hasilGejala, #hasilAir, #hasilIdeal {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #000000;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="color-bar">
+    <div class="color-1"></div>
+    <div class="color-2"></div>
+    <div class="color-3"></div>
+    <div class="color-4"></div>
+  </div>
+
+  <div class="content fade-in">
+    <div class="navbar topnav">
+      <img src="image copy.png" alt="Logo Organisasi">
+      <div id="myLinks" class="menu-links">
+        <a href="index.html">Beranda</a>
+        <a href="anggota.html">Anggota</a>
+        <a href="kontak.html">Instagram</a>
+        <a href="struktur.html">Jabatan</a>
+        <a href="materi.html">Materi</a>
+        <a href="Keluhan.html">Pemeriksaan</a>
+      </div>
+      <a href="javascript:void(0);" class="icon" onclick="toggleMenu()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+  </div>
+
+  
+  <h1>Simulasi Pemeriksaan Kesehatan</h1>
+
+  <div class="container">
+    <p>Pilih gejala yang Anda alami:</p>
+    <form id="gejalaForm">
+      <div class="checkbox-wrapper">
+         <label><input type="checkbox" value="demam"> Demam</label>
+        <label><input type="checkbox" value="batuk"> Batuk</label>
+        <label><input type="checkbox" value="sakit kepala"> Sakit Kepala</label>
+        <label><input type="checkbox" value="lelah"> Mudah Lelah</label>
+        <label><input type="checkbox" value="nyeri otot"> Nyeri Otot</label>
+        <label><input type="checkbox" value="diare"> Diare</label>
+        <label><input type="checkbox" value="mual"> Mual</label>
+        <label><input type="checkbox" value="pilek"> Pilek</label>
+        <label><input type="checkbox" value="pusing"> Pusing</label>
+        <label><input type="checkbox" value="bersin"> Sering Bersin</label>
+        <label><input type="checkbox" value="gatal kulit"> Gatal Kulit</label>
+        <label><input type="checkbox" value="mata merah"> Mata Merah</label>
+        <label><input type="checkbox" value="mimisan"> Mimisan</label>
+        <label><input type="checkbox" value="tenggorokan sakit"> Tenggorokan Sakit</label>
+        <label><input type="checkbox" value="keringat dingin"> Keringat Dingin</label>
+        <label><input type="checkbox" value="susah tidur"> Sulit Tidur</label>
+        <label><input type="checkbox" value="ngantuk"> Mengantuk Berlebihan</label>
+        <label><input type="checkbox" value="mata kabur"> Penglihatan Kabur</label>
+        <label><input type="checkbox" value="dehidrasi"> Dehidrasi</label>
+        <label><input type="checkbox" value="nyeri perut"> Nyeri Perut</label>
+        <label><input type="checkbox" value="sulit bernapas"> Sulit Bernapas</label>
+        <label><input type="checkbox" value="detak jantung cepat"> Detak Jantung Cepat</label>
+        <label><input type="checkbox" value="telinga berdenging"> Telinga Berdenging</label>
+        <label><input type="checkbox" value="pingsan"> Pingsan</label>
+        <label><input type="checkbox" value="tangan kesemutan"> Tangan Kesemutan</label>
+        <label><input type="checkbox" value="kaki bengkak"> Kaki Bengkak</label>
+        <label><input type="checkbox" value="mata gatal"> Mata Gatal</label>
+        <label><input type="checkbox" value="sariawan"> Sariawan</label>
+        <label><input type="checkbox" value="bau mulut"> Bau Mulut</label>
+        <label><input type="checkbox" value="gusi berdarah"> Gusi Berdarah</label>
+        <label><input type="checkbox" value="kram perut"> Kram Perut</label>
+        <label><input type="checkbox" value="asam lambung naik"> Asam Lambung Naik</label>
+        <label><input type="checkbox" value="bibir pecah"> Bibir Pecah</label>
+        <label><input type="checkbox" value="cepat haus"> Cepat Haus</label>
+        <label><input type="checkbox" value="kering tenggorokan"> Tenggorokan Kering</label>
+        <label><input type="checkbox" value="kulit kering"> Kulit Kering</label>
+        <label><input type="checkbox" value="bau badan"> Bau Badan</label>
+        <label><input type="checkbox" value="kulit memerah"> Kulit Memerah</label>
+        <label><input type="checkbox" value="keringat berlebih"> Keringat Berlebih</label>
+        <label><input type="checkbox" value="rasa panas di dada"> Panas di Dada</label>
+        <label><input type="checkbox" value="sulit konsentrasi"> Sulit Konsentrasi</label>
+        <label><input type="checkbox" value="cemas"> Cemas</label>
+        <label><input type="checkbox" value="jantung berdebar"> Jantung Berdebar</label>
+        <label><input type="checkbox" value="badan lemas"> Badan Lemas</label>
+        <label><input type="checkbox" value="nafas pendek"> Nafas Pendek</label>
+        <label><input type="checkbox" value="sulit buang air besar"> Susah BAB</label>
+        <label><input type="checkbox" value="cepat lapar"> Cepat Lapar</label>
+        <label><input type="checkbox" value="rambut rontok"> Rambut Rontok</label>
+        <label><input type="checkbox" value="kering mata"> Mata Kering</label>
+        <label><input type="checkbox" value="tangan dingin"> Tangan Dingin</label>
+      </div>
+      <button type="button" onclick="periksa()">Periksa</button>
+    </form>
+    <div class="result" id="hasilGejala"></div>
+  </div>
+
+  <h1>Kalkulator Kebutuhan Air Harian 💧</h1>
+
+  <div class="calculator">
+    <p>Masukkan berat badan Anda (kg):</p>
+    <input type="number" id="weightInput" placeholder="Contoh: 55" />
+    <br />
+    <button onclick="calculateWater()">Hitung</button>
+    <div class="result" id="hasilAir"></div>
+  </div>
+
+  <h1>💪 Kalkulator Berat Badan Ideal</h1>
+  <div class="calculator">
+    <label for="tinggi">Tinggi Badan (cm):</label><br>
+    <input type="number" id="tinggi" placeholder="Contoh: 170"><br>
+
+    <label for="jenisKelamin">Jenis Kelamin:</label><br>
+    <select id="jenisKelamin">
+      <option value="pria">Pria</option>
+      <option value="wanita">Wanita</option>
+    </select><br>
+
+    <button onclick="hitungIdeal()">Hitung</button>
+
+    <div class="result" id="hasilIdeal"></div>
+  </div>
+
+  <div class="divider-container fade-in">
+    <div class="divider">
+      <span>Salam Kemanusiaan</span>
+    </div>
+  </div>
+
+  <script>
+    // Toggle Menu (Hamburger)
+    function toggleMenu() {
+      var x = document.getElementById("myLinks");
+      if (x.style.display === "block") {
+        x.style.display = "none";
+      } else {
+        x.style.display = "block";
+      }
+    }
+
+    function periksa() {
+      const form = document.getElementById("gejalaForm");
+      const hasil = document.getElementById("hasilGejala");
+      const checked = [...form.querySelectorAll("input:checked")].map(cb => cb.value);
+
+      if (checked.length === 0) {
+        hasil.innerHTML = "⚠️ Silakan pilih minimal satu gejala.";
+        return;
+      }
+
+      const tindakan = {
+        "demam": "Minum air putih yang banyak dan istirahat cukup.",
+        "batuk": "Gunakan masker dan minum obat batuk herbal atau warung.",
+        "sakit kepala": "Cari tempat tenang dan hindari layar gadget terlalu lama.",
+        "lelah": "Perbanyak istirahat dan konsumsi makanan bergizi.",
+        "nyeri otot": "Lakukan peregangan ringan dan kompres hangat.",
+        "diare": "Minum oralit atau cairan rehidrasi lain.",
+        "mual": "Hindari makanan berminyak dan makan dalam porsi kecil.",
+        "pilek": "Minum air hangat dan perbanyak istirahat.",
+        "pusing": "Duduk dan tarik napas dalam, hindari berdiri mendadak.",
+        "bersin": "Gunakan tisu dan cuci tangan setelahnya.",
+        "gatal kulit": "Gunakan salep antihistamin dan hindari garukan.",
+        "mata merah": "Gunakan tetes mata steril dan hindari menyentuh mata.",
+        "mimisan": "Duduk tegak, condong ke depan dan tekan hidung perlahan.",
+        "tenggorokan sakit": "Minum air hangat dan hindari makanan pedas.",
+        "keringat dingin": "Beristirahat dan hindari aktivitas berat.",
+        "susah tidur": "Kurangi waktu layar sebelum tidur dan buat suasana nyaman.",
+        "ngantuk": "Cukup tidur di malam hari dan jangan terlalu banyak kafein.",
+        "mata kabur": "Istirahatkan mata dan konsultasi jika berlanjut.",
+        "dehidrasi": "Minum air putih secara teratur sepanjang hari.",
+        "nyeri perut": "Kompres hangat dan konsumsi makanan mudah dicerna.",
+        "sulit bernapas": "Duduk tegak dan tarik napas dalam, segera cari bantuan jika memburuk.",
+        "detak jantung cepat": "Tenangkan diri dan tarik napas perlahan.",
+        "telinga berdenging": "Kurangi suara keras dan istirahatkan tubuh.",
+        "pingsan": "Posisikan tubuh terlentang dan angkat kaki sedikit.",
+        "tangan kesemutan": "Gerakkan perlahan dan hindari tekanan pada tangan.",
+        "kaki bengkak": "Tinggikan kaki saat istirahat dan hindari berdiri lama.",
+        "mata gatal": "Gunakan kompres dingin dan hindari mengucek.",
+        "sariawan": "Kumur dengan air garam hangat.",
+        "bau mulut": "Sikat gigi teratur dan konsumsi air putih.",
+        "gusi berdarah": "Gunakan sikat gigi lembut dan rutin ke dokter gigi.",
+        "kram perut": "Kompres hangat dan kurangi makanan pedas.",
+        "asam lambung naik": "Makan porsi kecil dan hindari makanan asam.",
+        "bibir pecah": "Gunakan pelembab bibir dan minum air lebih banyak.",
+        "cepat haus": "Minum air putih secara teratur sepanjang hari.",
+        "kering tenggorokan": "Minum air hangat dan hindari berbicara berlebihan.",
+        "kulit kering": "Gunakan pelembab dan mandi dengan air hangat (bukan panas).",
+        "bau badan": "Jaga kebersihan dan gunakan deodoran.",
+        "kulit memerah": "Kompres dingin dan hindari paparan sinar matahari.",
+        "keringat berlebih": "Gunakan pakaian tipis dan jaga tubuh tetap sejuk.",
+        "rasa panas di dada": "Hindari makanan pedas dan berminyak.",
+        "sulit konsentrasi": "Cukup tidur dan kurangi multitasking.",
+        "cemas": "Tarik napas dalam dan coba teknik relaksasi.",
+        "jantung berdebar": "Duduk tenang dan atur napas.",
+        "badan lemas": "Makan cukup protein dan istirahat.",
+        "nafas pendek": "Tenangkan diri dan periksa kondisi bila berlanjut.",
+        "sulit buang air besar": "Konsumsi makanan berserat dan minum banyak air.",
+        "cepat lapar": "Pilih makanan tinggi serat dan protein.",
+        "rambut rontok": "Cukup konsumsi vitamin dan hindari stres.",
+        "kering mata": "Gunakan tetes mata dan kurangi layar gadget.",
+        "tangan dingin": "Gunakan pakaian hangat dan istirahat."
+      };
+
+      const saran = checked.map(item => tindakan[item]).filter(Boolean);
+
+      hasil.innerHTML = `<strong>💡 Saran Tindakan Ringan:</strong><ul>` +
+        saran.map(s => `<li>${s}</li>`).join('') +
+        `</ul>`;
+    }
+
+    function calculateWater() {
+      const weight = parseFloat(document.getElementById('weightInput').value);
+      const resultBox = document.getElementById('hasilAir');
+
+      if (isNaN(weight) || weight <= 0) {
+        resultBox.innerHTML = "❌ Mohon masukkan berat badan yang valid.";
+        return;
+      }
+
+      const waterNeed = weight * 35; // dalam mililiter
+      const liters = (waterNeed / 1000).toFixed(2);
+
+      resultBox.innerHTML = `✅ Anda disarankan minum sekitar <strong>${liters} liter</strong> air per hari.`;
+    }
+
+    function hitungIdeal() {
+      const tinggi = parseFloat(document.getElementById("tinggi").value);
+      const jenis = document.getElementById("jenisKelamin").value;
+      const hasilBox = document.getElementById("hasilIdeal");
+
+      if (isNaN(tinggi) || tinggi <= 0) {
+        hasilBox.innerText = "❌ Masukkan tinggi badan yang valid.";
+        return;
+      }
+
+      const broca = tinggi - 100;
+      let ideal;
+
+      if (jenis === "pria") {
+        ideal = broca - (broca * 0.10);
+      } else {
+        ideal = broca - (broca * 0.15);
+      }
+
+      hasilBox.innerText =
+        `Berat badan ideal untuk ${jenis} dengan tinggi ${tinggi} cm adalah sekitar ${ideal.toFixed(1)} kg.`;
+    }
+  </script>
+</body>
+</html>
