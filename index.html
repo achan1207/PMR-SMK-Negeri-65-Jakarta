@@ -558,62 +558,6 @@
       to { transform: translateY(30px); opacity: 0; }
     }
 
-     .forum-container {
-      max-width: 1050px;
-      margin: auto;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-
-    .forum-container h2 {
-      margin-top: 0;
-      color: #d32f2f;
-      font-size: 1.5em;
-    }
-
-    .comment-box {
-      display: flex;
-      flex-direction: column;
-      margin-bottom: 20px;
-    }
-
-    .comment-box input,
-    .comment-box textarea {
-      margin-bottom: 10px;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 14px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-
-    .comment-box button {
-      background-color: #d32f2f;
-      color: white;
-      border: none;
-      padding: 10px;
-      cursor: pointer;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-
-    .comment-list {
-      margin-top: 20px;
-    }
-
-    .comment-item {
-      border-bottom: 1px solid #eee;
-      padding: 10px 0;
-      word-wrap: break-word;
-    }
-
-    .comment-item strong {
-      color: #d32f2f;
-    }
-
     /* Responsif untuk layar kecil */
     @media (max-width: 480px) {
       body {
@@ -769,16 +713,7 @@
     </div>
   </div>
 
-  <div class="forum-container">
-  <h2>Forum Diskusi</h2>
-  <div class="comment-box">
-    <input type="text" id="nama" placeholder="Nama Anda">
-    <textarea id="komentar" rows="3" placeholder="Tulis komentar Anda..."></textarea>
-    <button onclick="tambahKomentar()">Kirim Komentar</button>
-  </div>
-  <div class="comment-list" id="daftar-komentar"></div>
-</div>
-
+ 
   <div class="countdown-container">
     <center><div class="judul">📅 Hitung Mundur ke HUT PMI (17 September)</div></center>
     <div class="countdown" id="countdown">
@@ -972,25 +907,7 @@
     setInterval(showPopup, 60000);
   }
 
-   function tambahKomentar() {
-    const nama = document.getElementById("nama").value.trim();
-    const komentar = document.getElementById("komentar").value.trim();
-
-    if (nama === '' || komentar === '') {
-      alert("Mohon isi nama dan komentar.");
-      return;
-    }
-
-    const div = document.createElement("div");
-    div.className = "comment-item";
-    div.innerHTML = `<strong>${nama}</strong><br>${komentar}`;
-
-    const daftar = document.getElementById("daftar-komentar");
-    daftar.prepend(div);
-
-    document.getElementById("nama").value = "";
-    document.getElementById("komentar").value = "";
-  }
+  
   </script>
 </body>
 
