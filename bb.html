@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Saldo Kas PMR</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f1f1f1;
+      margin: 0;
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 500px;
+      margin: auto;
+      background: #fff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 25px;
+    }
+
+    .judul {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .judul h2 {
+      margin: 0;
+      font-size: 20px;
+      color: #2c3e50;
+    }
+
+    .saldo-total {
+      font-size: 22px;
+      font-weight: bold;
+      margin: 10px 0 30px;
+    }
+
+    .positif {
+      color: #2e7d32;
+    }
+
+    .negatif {
+      color: #c62828;
+    }
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 15px;
+      flex-wrap: wrap;
+    }
+
+    .box {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px;
+      background: #f9f9f9;
+      border-radius: 10px;
+    }
+
+    .icon-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 18px;
+    }
+
+    .masuk .icon-circle {
+      background-color: #4caf50;
+    }
+
+    .keluar .icon-circle {
+      background-color: #ff9800;
+    }
+
+    .text {
+      text-align: left;
+    }
+
+    .text small {
+      font-size: 14px;
+      color: #777;
+    }
+
+    .text p {
+      margin: 3px 0 0;
+      font-size: 18px;
+      font-weight: bold;
+      color: #111;
+    }
+
+    @media (max-width: 480px) {
+      .row {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="judul">
+      <h2>Saldo Kas Saat Ini</h2>
+      <div class="saldo-total" id="saldoKas">Rp0</div>
+    </div>
+
+    <div class="row">
+      <div class="box masuk">
+        <div class="icon-circle"><i class="fas fa-arrow-down"></i></div>
+        <div class="text">
+          <small>Uang Masuk</small>
+          <p id="uangMasuk">Rp0</p>
+        </div>
+      </div>
+
+      <div class="box keluar">
+        <div class="icon-circle"><i class="fas fa-arrow-up"></i></div>
+        <div class="text">
+          <small>Uang Keluar</small>
+          <p id="uangKeluar">Rp0</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const uangMasuk = 2895000;
+    const uangKeluar = 2465000;
+    const total = uangMasuk - uangKeluar;
+
+    document.getElementById("uangMasuk").textContent = "Rp" + uangMasuk.toLocaleString();
+    document.getElementById("uangKeluar").textContent = "Rp" + uangKeluar.toLocaleString();
+
+    const saldoKas = document.getElementById("saldoKas");
+    saldoKas.textContent = "Rp" + total.toLocaleString();
+    saldoKas.classList.add(total >= 0 ? "positif" : "negatif");
+  </script>
+
+</body>
+</html>
